@@ -1,12 +1,77 @@
 <!DOCTYPE html>
 <html>
-<head> 
-<meta charset="utf-8"> 
-<title>計算機</title>
+<head>
+<meta charset="utf-8">
+<title>BMI計算</title>
+	<style>
+body
+{background-color:rgb(157, 245, 245);}
+h1 {color:rgb(185, 111, 255);}
+table
+{border:1px groove rgb(255, 194, 170);}
+th
+{
+	background-color:rgb(255, 124, 124);
+	color:white;
+}
+   </style>
 </head>
- 
 <body>
+	<h1><center>BMI 計算機 </center></h1>
+	
+    <center>
+        
+        <table border="0">
+                
+            <tr><td>身高(cm) </td><td> <input type="text"  id="box1" value=""></td></tr>
+            <tr><td>體重(kg) </td><td> <input type="text"  id="box2" value=""></td></tr>
 
+        </table>
+        
+        <div>
+        <input type="button" value="重置" onClick="reset()">
+        <input type="button" value="計算" onClick="equal()">
+        </div>
+        <br>
+        <div>
+        您的BMI值為:<input type="text" name="height" id="box3" value="">
+        </div>
+        
+    
+    </center>
+
+    <center>
+           
+        <h3> 參考數值 </h3>
+
+        <table border="10">
+           
+            <tr><th></th><th>BMI值(kg/m2)</th></tr>
+            <tr><th>體重過輕</th><td><center>BMI ＜ 18.5</center> </td></tr>
+            <tr><th>正常範圍</th><td><center>18.5≦BMI＜24</center></td></tr>
+            <tr><th>體重過重</th><td>體重過重：24≦BMI＜27<br>
+                                    輕度肥胖：27≦BMI＜30<br>
+                                    中度肥胖：30≦BMI＜35<br>
+                                    重度肥胖：BMI≧35               </td></tr>	
+        
+        </table>
+        <p>參考來源：<a href="https://www.kmuh.gov.tw/BMI.aspx?SQ2649lBXdI=">高雄市立聯合醫院</a></p>
+    </center>
+    
+	<script>
+function equal(){
+x = document.getElementById("box1").value;
+x = x*0.01;
+y = document.getElementById("box2").value;
+z = y/(x*x);
+document.getElementById("box3").value = parseFloat(z.toFixed(2));
+}
+function reset(){
+document.getElementById("box1").value="";
+document.getElementById("box2").value="";
+document.getElementById("box3").value="";
+}
+		
+   </script>
 </body>
-
 </html>
